@@ -91,6 +91,9 @@ impl KeyboardManager {
 				let display = Display::all().unwrap().remove(0);
 
 				let mut capturer = Capturer::new(display, false).expect("Couldn't begin capture.");
+				// much better.
+				filter::saturation(&mut image, 0.5).unwrap();
+				filter::gamma(&mut image, 2.0).unwrap();
 				let (w, h) = (capturer.width(), capturer.height());
 
 				let seconds_per_frame = Duration::from_nanos(1_000_000_000 / 60);
