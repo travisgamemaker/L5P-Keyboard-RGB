@@ -17,6 +17,8 @@ use std::sync::Arc;
 use std::thread;
 use std::time::{Duration, Instant};
 use sysinfo::{ComponentExt, System, SystemExt};
+use raster::filter;
+// i think i put this up here?
 
 pub struct KeyboardManager {
 	pub keyboard: Keyboard,
